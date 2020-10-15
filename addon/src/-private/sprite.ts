@@ -402,7 +402,8 @@ export default class Sprite {
         bottom: style.bottom,
         right: style.right,
         transform: style.transform,
-        classList: Array.from(this.element.classList),
+        classList: Array.from(this.element.classList)
+          .filter(c => !c.includes('ember-animated-')),
       };
       return position;
     }
